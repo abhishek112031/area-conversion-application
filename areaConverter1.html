@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document:Area converter</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: cadetblue;
+            /* font-size: medium; */
+        }
+
+        h2 {
+            text-align: center;
+            color: yellowgreen;
+            font-family: Lucida Handwriting;
+            background-color: gray;
+        }
+
+        #sqm {
+
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 8px 0;
+            font-size: medium;
+        }
+
+        #sqf {
+
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 8px 0;
+            font-size: medium;
+        }
+
+        #sqcm {
+
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 8px 0;
+            font-size: medium;
+        }
+
+        #sqin {
+
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 8px 0;
+            font-size: medium;
+        }
+
+        #sqyd {
+
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 8px 0;
+            font-size: medium;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>⚜ Instant Area Converter ⚜</h2>
+    <div class="container">
+        <h4> ⚙ Square Meter: 🔉<input type="number" name="" id="sqm" placeholder="in Sq-m"
+                oninput="squaremeter(this.value)"><br>
+            ⚙ Square-Feet: 🔉<input type="number" name="" id="sqf" placeholder="in Sq-ft"
+                oninput="squarefeet(this.value)"><br>
+            ⚙ Square-Centimeter: 🔉<input type="number" name="" id="sqcm" placeholder="in Sq-cm"
+                oninput="squarecentimeter(this.value)"><br>
+            ⚙ Square-Inch: 🔉<input type="number" name="" id="sqin" placeholder="in Sq-in"
+                oninput="squareinch(this.value)"><br>
+            ⚙ Square-Yard: 🔉<input type="number" name="" id="sqyd" placeholder="in Sq-yd"
+                oninput="squareyard(this.value)"></h4>
+    </div>
+
+
+    <script>
+        function squaremeter(m) {
+            m = parseFloat(m);
+            document.getElementById("sqf").value = m * 10.76391042;
+            document.getElementById("sqcm").value = m * 10000;
+            document.getElementById("sqin").value = m * 1550;
+            document.getElementById("sqyd").value = m * 1.19599;
+
+        }
+        function squarefeet(f) {
+            f = parseFloat(f);
+
+            document.getElementById("sqm").value = f / 10.76391042;
+            document.getElementById("sqcm").value = f * 929.03;
+            document.getElementById("sqin").value = f * 144;
+            document.getElementById("sqyd").value = f /9;
+
+
+        }
+        function squarecentimeter(sqc) {
+            sqc = parseFloat(sqc);
+
+            document.getElementById("sqm").value = sqc / 10000;
+            document.getElementById("sqf").value = 0.00107639 * sqc;
+            document.getElementById("sqin").value = sqc/6.452;
+            document.getElementById("sqyd").value = 0.000119599 * sqc;
+
+
+        }
+        function squareinch(sqi) {
+            sqi = parseFloat(sqi);
+
+            document.getElementById("sqm").value = sqi * 0.00064516;
+            document.getElementById("sqf").value = 0.00694444 * sqi;
+            document.getElementById("sqcm").value = 6.452 * sqi;
+            document.getElementById("sqyd").value = sqi / 1296;
+
+        }
+        function squareyard(sqy) {
+            sqy = parseFloat(sqy);
+
+            document.getElementById("sqm").value = sqy / 1.196;
+            document.getElementById("sqf").value = 9 * sqy;
+            document.getElementById("sqcm").value = 8361 * sqy;
+            document.getElementById("sqin").value = sqy * 1296;
+
+        }
+    </script>
+</body>
+
+</html>
